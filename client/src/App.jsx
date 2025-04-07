@@ -5,7 +5,7 @@ import AddProduct from "./components/AddProduct"
 import DeleteProduct from "./components/DeleteProduct"
 import EditProduct from "./components/EditProduct"
 import ProductManagement from "./components/ProductManagement"
-import Navbar from "./components/NavBar"
+import Navbar from "./components/Navbar"
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import Revenue from "./components/Revenue"
 import Login from './components/Login'
