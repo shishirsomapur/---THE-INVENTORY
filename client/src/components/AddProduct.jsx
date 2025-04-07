@@ -81,7 +81,7 @@ const AddProduct = () => {
         if (validateForm()) {
             try {
                 const token = localStorage.getItem("token")
-                const url = `http://localhost:3000/api/products/`
+                const url = `https://the-inventory-xnby.onrender.com/api/products/`
                 const headers = {
                     headers: {
                         Authorization: `Bearer ${token}`

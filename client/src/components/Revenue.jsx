@@ -35,7 +35,7 @@ const StockOverview = () => {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/products")
+            const res = await axios.get("https://the-inventory-xnby.onrender.com/api/products")
             setProducts(res.data)
         } catch (error) {
             console.error("Error fetching products", error)
@@ -44,7 +44,7 @@ const StockOverview = () => {
 
     const fetchTransactions = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/transactions")
+            const res = await axios.get("https://the-inventory-xnby.onrender.com/api/transactions")
             setTransactions(res.data)
         } catch (error) {
             console.error("Error fetching transactions", error)

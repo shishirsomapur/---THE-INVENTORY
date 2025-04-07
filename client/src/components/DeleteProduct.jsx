@@ -11,7 +11,7 @@ const DeleteProduct = () => {
     }, [])
 
     const fetchProducts = async () => {
-        const response = await axios.get('http://localhost:3000/api/products')
+        const response = await axios.get('https://the-inventory-xnby.onrender.com/api/products')
         setProducts(response.data)
     }
 
@@ -22,7 +22,7 @@ const DeleteProduct = () => {
 
     const handleDeleteConfirm = async () => {
         try {
-            await axios.delete(`http://localhost:3000/api/products/${selectedProduct.id}`)
+            await axios.delete(`https://the-inventory-xnby.onrender.com/api/products/${selectedProduct.id}`)
             fetchProducts()
             alert(`Deleted Product "${selectedProduct.name}" successfully`)
             setShowModal(false)

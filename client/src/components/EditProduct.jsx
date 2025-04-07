@@ -11,7 +11,7 @@ const EditProduct = () => {
     }, [])
 
     const fetchProducts = async () => {
-        let products = await axios.get('http://localhost:3000/api/products')
+        let products = await axios.get('https://the-inventory-xnby.onrender.com/api/products')
         setProducts(products.data)
     }
 
@@ -31,7 +31,7 @@ const EditProduct = () => {
     const handleEditConfirm = async () => {
         try {
             const { name, category, quantity, price, description } = selectedProduct
-            await axios.put(`http://localhost:3000/api/products/${selectedProduct.id}`, {
+            await axios.put(`https://the-inventory-xnby.onrender.com/api/products/${selectedProduct.id}`, {
                 productName: name,
                 category,
                 quantity,

@@ -14,7 +14,7 @@ const SellProduct = () => {
     }, [])
 
     const fetchProducts = async () => {
-        let products = await axios.get('http://localhost:3000/api/products')
+        let products = await axios.get('https://the-inventory-xnby.onrender.com/api/products')
         setProducts(products.data)
     }
 
