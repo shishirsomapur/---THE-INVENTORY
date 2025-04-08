@@ -9,6 +9,12 @@ const port = 3000
 app.use(cors())
 app.use(express.json())
 
+app.use(cors({
+  origin: 'https://the-inventory-jmb2.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 const client = new OAuth2Client('309023904476-uupr12jogp9t41s4cdc0bsl1ve6najuu.apps.googleusercontent.com')
 app.post('/api/auth/google', async (req, res) => {
     const { token } = req.body
