@@ -50,7 +50,7 @@ const SellProduct = () => {
 
     const handleSellConfirm = async () => {
         try {
-            await axios.put(`http://localhost:3000/api/products/${selectedProduct.id}`, {
+            await axios.put(`https://the-inventory-xnby.onrender.com/api/products/${selectedProduct.id}`, {
                 productName: selectedProduct.name,
                 category: selectedProduct.category,
                 quantity: selectedProduct.quantity - sellQuantity,
@@ -58,7 +58,7 @@ const SellProduct = () => {
                 description: selectedProduct.description
             })
 
-            const txnResult = await axios.post("http://localhost:3000/api/transactions", {
+            const txnResult = await axios.post("https://the-inventory-xnby.onrender.com/api/transactions", {
                 productId: selectedProduct.id,
                 quantity: sellQuantity,
                 price: selectedProduct.price,
