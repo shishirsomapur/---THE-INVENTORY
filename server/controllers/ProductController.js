@@ -2,14 +2,14 @@ const ProductModel = require('../model/ProductModel')
 
 exports.addProduct = async (req, res) => {
     try {
-        const { productName, category, quantity, price, description } = req.body
+        const { name, category, quantity, price, description } = req.body
         const ids = await ProductModel.getProductIds()
         const existingIds = ids.map(p => p.id)
         let id
         do {
             id = "PROD" + Math.round(Math.random() * 10000)
         } while (existingIds.includes(id))
-        const result = await ProductModel.addProduct(id, productName, category, quantity, price, description)
+        const result = await ProductModel.addProduct(id, name, category, quantity, price, description)
         if (result.message === 'Product already availiable in the table') return res.status(409).json({ message: result.message })
         res.status(201).json({ message: result.message, productId: result.productId })
     } catch (error) {
