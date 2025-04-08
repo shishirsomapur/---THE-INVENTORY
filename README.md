@@ -58,26 +58,32 @@ git clone https://github.com/shishirsomapur/godaamu-inventory.git
 cd ಗೋದಾಮು - THE INVENTORY
 
 ### 📦 3. Setup Frontend (Client)
+
+```bash
 cd client
 npm install
 npm run dev
+```
 
 Now, open your browser and navigate to:
 
-arduino
+```bash
 Copy
 Edit
 http://localhost:5173
+```
 
 ### ⚙️ 4. Setup Backend (Server)
 Open a new terminal window:
 
+```bash
 bash
 Copy
 Edit
 cd server
 npm install
-npm run dev
+nodemon server.js
+```
 
 
 ### 🗄️ 5. Database Setup (MySQL)
@@ -109,19 +115,15 @@ Create the following two tables:
 | price       | INT              |
 | total_amount| INT              |
 
-	
-	
-quantity	INT
-price	DECIMAL(10,2)
-	DECIMAL(10,2)
-
 Update the db.js file in the /server directory with your MySQL credentials:
 
+```bash
 js
 Copy
 Edit
+```
 
-// server/db.js
+config/db.js
 ```bash
 const pool = mysql.createPool({
   host: "localhost",
